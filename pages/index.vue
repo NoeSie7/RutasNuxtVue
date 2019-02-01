@@ -2,8 +2,8 @@
   <section class="container">
   <div class="cols">
     <div class="col-s3">
-      <h1>HOLA</h1>
-      <h2>JUJU</h2>
+      <h1>Ejemplo de rutas Con Vuex</h1>
+      <h2>JOJO</h2>
     </div>
   </div>
   </section>
