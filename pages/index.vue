@@ -11,12 +11,13 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+ console.log('URL', process.env.NODE_ENV);
 
 export default {
   layout: 'header',
   components: {
     Logo
-  }
+  },
 }
 </script>
 

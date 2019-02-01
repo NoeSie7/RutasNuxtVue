@@ -18,16 +18,16 @@
     <b-navbar-toggle target="nav_dropdown_collapse"></b-navbar-toggle>
     <b-collapse is-nav id="nav_dropdown_collapse">
       <b-navbar-nav>
-        <nuxt-link class="nav-item nav-link" to="/">Home</nuxt-link>
-        <nuxt-link class="nav-item nav-link" to="/link">Link</nuxt-link>
+        <nuxt-link class="nav-item nav-link" :to="`${basehref}/`">Home</nuxt-link>
+        <nuxt-link class="nav-item nav-link" :to="`${basehref}/link`">Link</nuxt-link>
         <!-- Navbar dropdowns -->
         <b-nav-item-dropdown text="User" right>
-           <nuxt-link class="dropdown-item" to="/User/info">Info</nuxt-link>
-           <nuxt-link class="dropdown-item" to="/User/settings">Settings</nuxt-link>
+           <nuxt-link class="dropdown-item" :to="`${basehref}/User/info`">Info</nuxt-link>
+           <nuxt-link class="dropdown-item" :to="`${basehref}/User/settings`">Settings</nuxt-link>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="RouteParam" right>
-            <nuxt-link class="dropdown-item" to="/User/1"><span class="m-2" >OP1</span></nuxt-link>
-             <nuxt-link class="dropdown-item" to="/User/2"> <span class="m-2" >OP2</span></nuxt-link>
+            <nuxt-link class="dropdown-item" :to="`${basehref}/User/1`"><span class="m-2" >OP1</span></nuxt-link>
+             <nuxt-link class="dropdown-item" :to="`${basehref}/User/2`"> <span class="m-2" >OP2</span></nuxt-link>
 
         </b-nav-item-dropdown>
       </b-navbar-nav>
@@ -37,8 +37,15 @@
   </div>
 </template>
 <script>
-export default {
+import env from "../assets/env";
+console.log(env);
 
+export default {
+  data(){
+    return{
+      basehref: env[process.env.NODE_ENV].basehref
+    }
+  }
 }
 </script>
 <style>
